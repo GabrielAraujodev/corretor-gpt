@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CorretorGPT: 50 Prompts de IA para Corretores de Imóveis</title>
+  <meta name="description" content="Prompts prontos para anúncios no Zap Imóveis, Viva Real e OLX e scripts de atendimento no WhatsApp usando o ChatGPT gratuito.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://corretorgpt.com.br/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230D4A34'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='sans-serif' font-weight='700' font-size='18' fill='%23FFFFFF'%3EC%3C/text%3E%3C/svg%3E">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CorretorGPT: 50 Prompts de IA para Corretores de Imóveis">
+  <meta property="og:description" content="Prompts prontos para anúncios no Zap Imóveis, Viva Real e OLX e scripts de atendimento no WhatsApp usando o ChatGPT gratuito.">
+  <meta property="og:url" content="https://corretorgpt.com.br/">
+  <meta property="og:image" content="assets/hero-arquitetura.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #F7F7F5;
+      --paper: #FFFFFF;
+      --ink: #101211;
+      --muted: #545855;
+      --subtle: #696E6A;
+      --border: #D9DDD9;
+      --accent: #0D4A34;
+      --accent-hover: #093626;
+
+      --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+      --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+      --font-mono: 'IBM Plex Mono', monospace;
+
+      --radius-none: 0;
+      --radius-sm: 2px;
+      --container: 1240px;
+      --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .frame {
+      width: 100%;
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* Editorial Masthead (Non-sticky, zero SaaS button chrome) */
+    .masthead {
+      padding: 24px 0 18px;
+    }
+
+    .masthead-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 24px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .wordmark {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    .masthead-meta {
+      display: flex;
+      align-items: baseline;
+      gap: 28px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .masthead-meta a {
+      transition: color 180ms ease-out;
+    }
+
+    .masthead-meta a:hover {
+      color: var(--ink);
+    }
+
+    .masthead-action {
+      color: var(--ink);
+      font-weight: 500;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 2px;
+    }
+
+    .masthead-action:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* Primary Button */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--accent);
+      color: var(--paper);
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.96rem;
+      padding: 16px 28px;
+      border-radius: var(--radius-sm);
+      min-height: 54px;
+      transition: background-color 180ms ease-out, transform 180ms ease-out;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary:focus-visible,
+    .link-quiet:focus-visible,
+    .masthead-action:focus-visible,
+    .index-btn:focus-visible,
+    .copy-action:focus-visible,
+    summary:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .link-quiet {
+      font-size: 0.94rem;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2px;
+      transition: color 180ms ease-out, border-color 180ms ease-out;
+    }
+
+    .link-quiet:hover {
+      color: var(--ink);
+      border-color: var(--ink);
+    }
+
+    /* Poster Hero */
+    .hero {
+      padding: 44px 0 0;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(2.55rem, 5.4vw, 4.65rem);
+      line-height: 1.01;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      max-width: 17ch;
+      text-wrap: balance;
+      margin-bottom: 36px;
+    }
+
+    .hero-subbar {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 44px;
+    }
+
+    .hero-lead {
+      grid-column: 1 / 7;
+      font-size: 1.08rem;
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 52ch;
+      text-wrap: pretty;
+    }
+
+    .hero-cta-group {
+      grid-column: 7 / 13;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    /* Full-bleed Architectural Photograph Cropped by the Fold */
+    .hero-media {
+      width: 100%;
+      overflow: hidden;
+      background-color: var(--border);
+    }
+
+    .hero-media img {
+      width: 100%;
+      height: clamp(300px, 46vw, 560px);
+      object-fit: cover;
+      object-position: center 55%;
+      will-change: transform;
+    }
+
+    /* Scroll-Paced Statement Reveal (GSAP ScrollTrigger) */
+    .section-statement {
+      padding: 128px 0 112px;
+    }
+
+    .statement-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 28px;
+    }
+
+    .statement-body {
+      grid-column: 2 / 12;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(1.65rem, 3.2vw, 2.7rem);
+      line-height: 1.24;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      text-wrap: pretty;
+    }
+
+    .statement-word {
+      opacity: 0.2;
+    }
+
+    /* Print Specimen: Interactive Real Prompt Catalog */
+    .section-specimen {
+      padding: 88px 0 120px;
+      border-top: 1px solid var(--border);
+    }
+
+    .specimen-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 48px;
+      align-items: start;
+    }
+
+    .specimen-nav {
+      grid-column: 1 / 5;
+    }
+
+    .specimen-heading {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.65rem, 2.5vw, 2.15rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 14px;
+      text-wrap: balance;
+    }
+
+    .specimen-note {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--muted);
+      margin-bottom: 32px;
+      max-width: 36ch;
+    }
+
+    .index-list {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid var(--border);
+      margin-bottom: 36px;
+    }
+
+    .index-btn {
+      text-align: left;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.12rem;
+      color: var(--muted);
+      transition: color 160ms ease-out;
+    }
+
+    .index-btn:hover {
+      color: var(--ink);
+    }
+
+    .index-btn.is-active {
+      color: var(--accent);
+    }
+
+    .index-count {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: var(--subtle);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .index-btn.is-active .index-count {
+      color: var(--accent);
+    }
+
+    .how-inline {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 38ch;
+    }
+
+    .how-inline strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* Manuscript Paper Sheet */
+    .specimen-sheet {
+      grid-column: 5 / 13;
+      background-color: var(--paper);
+      border: 1px solid var(--border);
+      padding: 40px 44px;
+    }
+
+    .sheet-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 20px;
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sheet-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: var(--ink);
+    }
+
+    .copy-action {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--accent);
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 1px;
+      white-space: nowrap;
+      transition: opacity 160ms ease-out;
+    }
+
+    .copy-action:hover {
+      opacity: 0.72;
+    }
+
+    .sheet-summary {
+      font-size: 0.96rem;
+      line-height: 1.62;
+      color: var(--muted);
+      margin-bottom: 28px;
+      max-width: 58ch;
+    }
+
+    .sheet-prompt {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      line-height: 1.72;
+      color: var(--ink);
+      white-space: pre-wrap;
+      padding: 24px;
+      background-color: var(--bg);
+      border: 1px solid var(--border);
+    }
+
+    /* Unified Decision Sheet: Bonuses + Guarantee + Offer */
+    .section-offer {
+      padding: 112px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .offer-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 56px;
+      align-items: start;
+    }
+
+    .offer-left {
+      grid-column: 1 / 6;
+    }
+
+    .offer-subhead {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.45rem;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
+
+    .bonus-stack {
+      display: grid;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .bonus-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .bonus-name span {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: var(--subtle);
+      margin-left: 8px;
+    }
+
+    .bonus-desc {
+      font-size: 0.93rem;
+      line-height: 1.58;
+      color: var(--muted);
+    }
+
+    .guarantee-clause {
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+
+    .guarantee-clause h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .guarantee-clause p {
+      font-size: 0.94rem;
+      line-height: 1.62;
+      color: var(--muted);
+    }
+
+    /* Right Paper Receipt */
+    .offer-receipt {
+      grid-column: 7 / 13;
+      background-color: var(--paper);
+      border: 1px solid var(--ink);
+      padding: 44px;
+    }
+
+    .receipt-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-bottom: 24px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .receipt-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--ink);
+    }
+
+    .receipt-tag {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--subtle);
+    }
+
+    .receipt-lines {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .receipt-lines li {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 9px 0;
+      font-size: 0.94rem;
+      color: var(--muted);
+    }
+
+    .receipt-lines li span:last-child {
+      font-family: var(--font-mono);
+      color: var(--ink);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .receipt-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-top: 24px;
+      margin-bottom: 28px;
+      border-top: 1px solid var(--ink);
+      gap: 16px;
+    }
+
+    .price-old {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--subtle);
+      text-decoration: line-through;
+      margin-bottom: 4px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .price-figure {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 3.5rem;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .price-split {
+      font-size: 0.92rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .receipt-cta {
+      width: 100%;
+    }
+
+    .receipt-foot {
+      margin-top: 16px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--subtle);
+    }
+
+    /* Offset Swiss FAQ */
+    .section-faq {
+      padding: 88px 0 112px;
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 48px;
+      align-items: start;
+    }
+
+    .faq-title-col {
+      grid-column: 1 / 5;
+    }
+
+    .faq-title-col h2 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.8rem;
+      line-height: 1.15;
+      color: var(--ink);
+    }
+
+    .faq-list-col {
+      grid-column: 5 / 13;
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-row {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-q {
+      padding: 22px 0;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.08rem;
+      color: var(--ink);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .faq-q::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-mark {
+      font-family: var(--font-mono);
+      font-size: 1.15rem;
+      color: var(--accent);
+      transition: transform 160ms ease-out;
+    }
+
+    .faq-row[open] .faq-mark {
+      transform: rotate(45deg);
+    }
+
+    .faq-a {
+      padding-bottom: 22px;
+      font-size: 0.95rem;
+      line-height: 1.64;
+      color: var(--muted);
+      max-width: 60ch;
+    }
+
+    /* Colophon Footer */
+    .colophon {
+      border-top: 1px solid var(--border);
+      padding: 28px 0 40px;
+      font-size: 0.82rem;
+      color: var(--subtle);
+    }
+
+    .colophon-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .colophon-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .colophon-links a:hover {
+      color: var(--ink);
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .hero-subbar,
+      .statement-grid,
+      .specimen-grid,
+      .offer-grid,
+      .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .hero-lead,
+      .hero-cta-group,
+      .statement-body,
+      .specimen-nav,
+      .specimen-sheet,
+      .offer-left,
+      .offer-receipt,
+      .faq-title-col,
+      .faq-list-col {
+        grid-column: 1 / -1;
+      }
+
+      .hero-cta-group {
+        justify-content: flex-start;
+      }
+
+      .specimen-sheet,
+      .offer-receipt {
+        padding: 28px 24px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .frame {
+        padding: 0 20px;
+      }
+
+      .masthead-meta a:not(.masthead-action) {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 28px;
+      }
+
+      .section-statement {
+        padding: 72px 0;
+      }
+
+      .section-specimen,
+      .section-offer,
+      .section-faq {
+        padding: 64px 0;
+      }
+
+      .receipt-total {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .btn-primary {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .statement-word {
+        opacity: 1;
+      }
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        "name": "CorretorGPT: 50 Prompts de IA para Corretores de Imóveis",
+        "description": "Biblioteca de comandos calibrados para Zap Imóveis, Viva Real, OLX e atendimento de leads no WhatsApp.",
+        "brand": { "@type": "Brand", "name": "CorretorGPT" },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://pay.hotmart.com/L108618537P",
+          "priceCurrency": "BRL",
+          "price": "47.00",
+          "availability": "https://schema.org/InStock",
+          "priceValidUntil": "2026-12-31"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Preciso pagar a assinatura do ChatGPT Plus?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Não. Todos os comandos funcionam na versão gratuita do ChatGPT." }
+          },
+          {
+            "@type": "Question",
+            "name": "Consigo usar tudo diretamente pelo celular?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Sim. O arquivo abre no celular e roda no aplicativo gratuito do ChatGPT." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="frame">
+      <div class="masthead-row">
+        <a href="#" class="wordmark">CorretorGPT</a>
+        <nav class="masthead-meta" aria-label="Navegação principal">
+          <a href="#catalogo">Catálogo de prompts</a>
+          <a href="#duvidas">Dúvidas</a>
+          <a href="#oferta" class="masthead-action">Baixar pack (R$ 47)</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Editorial + Fotografia Arquitetônica na dobra -->
+    <section class="hero">
+      <div class="frame">
+        <h1 class="hero-title" data-hero-item>
+          Textos que vendem imóveis sem travar na tela.
+        </h1>
+
+        <div class="hero-subbar" data-hero-item>
+          <p class="hero-lead">
+            Mais de 50 prompts calibrados para Zap Imóveis, Viva Real, OLX e atendimento no WhatsApp. Preencha os dados do imóvel, cole no ChatGPT gratuito e publique.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#oferta" class="btn-primary">Baixar os 50 prompts por R$ 47</a>
+            <a href="#catalogo" class="link-quiet">Ler um prompt real</a>
+          </div>
+        </div>
+      </div>
+
+      <figure class="hero-media">
+        <img src="assets/hero-arquitetura.jpg" width="1600" height="900" alt="Sala de estar e varanda de apartamento modernista brasileiro em concreto aparente, madeira freijó e luz natural">
+      </figure>
+    </section>
+
+    <!-- Statement Reveal no Scroll -->
+    <section class="section-statement" aria-label="O problema resolvido">
+      <div class="frame statement-grid">
+        <p class="statement-body" id="scrollStatement">
+          Você perde a venda quando publica "lindo apartamento de 3 quartos" no portal e demora vinte minutos para responder o cliente no WhatsApp. O CorretorGPT substitui o improviso por comandos testados para a rotina imobiliária brasileira, direto no ChatGPT gratuito.
+        </p>
+      </div>
+    </section>
+
+    <!-- Espécime Interativo do Produto (Índice Suíço + Folha do Prompt Real) -->
+    <section class="section-specimen" id="catalogo">
+      <div class="frame specimen-grid">
+        <div class="specimen-nav">
+          <h2 class="specimen-heading">O que você recebe nos 4 módulos</h2>
+          <p class="specimen-note">Clique em qualquer módulo para ler um trecho real do comando pronto para colar no chat.</p>
+
+          <div class="index-list" role="tablist" aria-label="Módulos do CorretorGPT">
+            <button class="index-btn is-active" role="tab" aria-selected="true" data-mod="portais" onclick="selectModule('portais')">
+              <span>Anúncios de Portal</span>
+              <span class="index-count">25 prompts</span>
+            </button>
+            <button class="index-btn" role="tab" aria-selected="false" data-mod="whatsapp" onclick="selectModule('whatsapp')">
+              <span>Atendimento WhatsApp</span>
+              <span class="index-count">12 scripts</span>
+            </button>
+            <button class="index-btn" role="tab" aria-selected="false" data-mod="captacao" onclick="selectModule('captacao')">
+              <span>Captação Exclusiva</span>
+              <span class="index-count">8 comandos</span>
+            </button>
+            <button class="index-btn" role="tab" aria-selected="false" data-mod="reels" onclick="selectModule('reels')">
+              <span>Roteiros de Reels</span>
+              <span class="index-count">10 roteiros</span>
+            </button>
+          </div>
+
+          <p class="how-inline">
+            <strong>Como funciona:</strong> escolha a tarefa, substitua os dados do imóvel entre colchetes e cole no aplicativo gratuito do ChatGPT no celular ou computador.
+          </p>
+        </div>
+
+        <article class="specimen-sheet" aria-live="polite">
+          <div class="sheet-head">
+            <h3 class="sheet-title" id="sheetTitle">Anúncios para Zap Imóveis, Viva Real e OLX</h3>
+            <button class="copy-action" id="btnCopySpecimen" onclick="copySpecimen()">Copiar este prompt</button>
+          </div>
+          <p class="sheet-summary" id="sheetSummary">
+            Estruturas separadas por tipologia (lançamentos na planta, imóveis prontos, alto padrão, loteamentos e salas comerciais) respeitando limites de caracteres e diretrizes do CRECI.
+          </p>
+          <pre class="sheet-prompt" id="sheetPrompt">Atue como redator imobiliário para Zap Imóveis e Viva Real.
+
+Escreva um anúncio objetivo com base nestes dados:
+- Imóvel: [Apartamento / Casa / Cobertura]
+- Metragem e planta: [142m², 3 suítes, varanda gourmet, 2 vagas]
+- Localização: [Bairro e referência real]
+- Diferencial principal: [Vista livre, sol da manhã, lazer]
+
+Regras obrigatórias:
+1. Primeiros 140 caracteres com dado concreto, sem clichês como "oportunidade imperdível".
+2. Tópicos curtos para leitura rápida no celular.
+3. Respeitar diretrizes do CRECI sem promessas enganosas.
+4. Encerrar com convite direto para visita via WhatsApp.</pre>
+        </article>
+      </div>
+    </section>
+
+    <!-- Folha Única de Decisão: Bônus + Garantia + Recibo -->
+    <section class="section-offer" id="oferta">
+      <div class="frame offer-grid">
+        <div class="offer-left">
+          <h2 class="offer-subhead">Três materiais de apoio inclusos</h2>
+
+          <div class="bonus-stack">
+            <div>
+              <h3 class="bonus-name">Atalhos no Celular <span>antes R$ 67</span></h3>
+              <p class="bonus-desc">Como salvar os comandos direto no teclado do smartphone e no aplicativo do ChatGPT para responder leads na rua ou em plantões.</p>
+            </div>
+            <div>
+              <h3 class="bonus-name">Checklist CRECI <span>antes R$ 47</span></h3>
+              <p class="bonus-desc">Resumo dos dados obrigatórios e termos proibidos em divulgações imobiliárias para publicar com segurança jurídica.</p>
+            </div>
+            <div>
+              <h3 class="bonus-name">Matriz de Objeções <span>antes R$ 57</span></h3>
+              <p class="bonus-desc">Respostas imediatas para travas comuns de fechamento como preço alto, juros de financiamento e comparação com outros imóveis.</p>
+            </div>
+          </div>
+
+          <div class="guarantee-clause">
+            <h3>Garantia incondicional de 7 dias</h3>
+            <p>
+              Baixe o material, publique seus próximos anúncios e teste os scripts no WhatsApp. Se em até 7 dias você concluir que o pack não economizou seu tempo, envie um e-mail ao suporte e devolvemos 100% do valor pago.
+            </p>
+          </div>
+        </div>
+
+        <div class="offer-receipt">
+          <div class="receipt-head">
+            <h2 class="receipt-title">CorretorGPT</h2>
+            <span class="receipt-tag">ACESSO VITALÍCIO</span>
+          </div>
+
+          <ul class="receipt-lines">
+            <li><span>Biblioteca com 4 módulos (+50 prompts)</span><span>R$ 197</span></li>
+            <li><span>Guia de Atalhos no Celular</span><span>Incluso</span></li>
+            <li><span>Checklist de Boas Práticas CRECI</span><span>Incluso</span></li>
+            <li><span>Matriz de Respostas para Objeções</span><span>Incluso</span></li>
+          </ul>
+
+          <div class="receipt-total">
+            <div>
+              <div class="price-old">Total separado: R$ 368</div>
+              <div class="price-figure">R$ 47</div>
+            </div>
+            <div class="price-split">à vista ou 5x de R$ 10,41</div>
+          </div>
+
+          <a href="https://pay.hotmart.com/L108618537P" class="btn-primary receipt-cta">Baixar os 50 prompts por R$ 47</a>
+          <p class="receipt-foot">Pagamento único · Sem mensalidade · Envio imediato por e-mail</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Assimétrico -->
+    <section class="section-faq" id="duvidas">
+      <div class="frame faq-grid">
+        <div class="faq-title-col">
+          <h2>Dúvidas frequentes</h2>
+        </div>
+
+        <div class="faq-list-col">
+          <details class="faq-row" open>
+            <summary class="faq-q">
+              Preciso pagar a assinatura do ChatGPT Plus?
+              <span class="faq-mark" aria-hidden="true">+</span>
+            </summary>
+            <p class="faq-a">Não. Todos os comandos funcionam na versão gratuita do ChatGPT, sem mensalidade extra.</p>
+          </details>
+
+          <details class="faq-row">
+            <summary class="faq-q">
+              Não tenho facilidade com tecnologia. Vou conseguir usar?
+              <span class="faq-mark" aria-hidden="true">+</span>
+            </summary>
+            <p class="faq-a">Sim. Se você sabe copiar e colar uma mensagem no WhatsApp, já sabe usar: preenche os dados entre colchetes e cola no chat.</p>
+          </details>
+
+          <details class="faq-row">
+            <summary class="faq-q">
+              Consigo usar diretamente pelo celular?
+              <span class="faq-mark" aria-hidden="true">+</span>
+            </summary>
+            <p class="faq-a">Sim. O material abre no smartphone e funciona com o aplicativo oficial e gratuito do ChatGPT no Android e no iPhone.</p>
+          </details>
+
+          <details class="faq-row">
+            <summary class="faq-q">
+              Serve para corretor autônomo ou só para imobiliárias?
+              <span class="faq-mark" aria-hidden="true">+</span>
+            </summary>
+            <p class="faq-a">Serve para ambos. Corretores autônomos ganham velocidade para anunciar e atender, e gestores padronizam a qualidade dos textos da equipe.</p>
+          </details>
+
+          <details class="faq-row">
+            <summary class="faq-q">
+              Como recebo o acesso e por quanto tempo ele vale?
+              <span class="faq-mark" aria-hidden="true">+</span>
+            </summary>
+            <p class="faq-a">Assim que o pagamento é confirmado, o link chega no seu e-mail. O pagamento é único e o acesso é vitalício.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="colophon">
+    <div class="frame colophon-row">
+      <p>© 2026 CorretorGPT. Sem vínculo com OpenAI, Zap Imóveis, Viva Real ou OLX.</p>
+      <div class="colophon-links">
+        <a href="mailto:gabrielalves2p@gmail.com">Suporte: gabrielalves2p@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script>
+    const modules = {
+      portais: {
+        title: 'Anúncios para Zap Imóveis, Viva Real e OLX',
+        summary: 'Estruturas separadas por tipologia (lançamentos na planta, imóveis prontos, alto padrão, loteamentos e salas comerciais) respeitando limites de caracteres e diretrizes do CRECI.',
+        prompt: 'Atue como redator imobiliário para Zap Imóveis e Viva Real.\n\nEscreva um anúncio objetivo com base nestes dados:\n- Imóvel: [Apartamento / Casa / Cobertura]\n- Metragem e planta: [142m², 3 suítes, varanda gourmet, 2 vagas]\n- Localização: [Bairro e referência real]\n- Diferencial principal: [Vista livre, sol da manhã, lazer]\n\nRegras obrigatórias:\n1. Primeiros 140 caracteres com dado concreto, sem clichês como "oportunidade imperdível".\n2. Tópicos curtos para leitura rápida no celular.\n3. Respeitar diretrizes do CRECI sem promessas enganosas.\n4. Encerrar com convite direto para visita via WhatsApp.'
+      },
+      whatsapp: {
+        title: 'Scripts de Conversão e Reativação no WhatsApp',
+        summary: 'Mensagens curtas e naturais para atender leads novos nos primeiros segundos, qualificar orçamento sem parecer invasivo, confirmar visitas e reativar contatos que esfriaram.',
+        prompt: 'Crie uma primeira resposta curta de WhatsApp para um lead que veio do portal perguntando se o imóvel [Apartamento 142m², Bairro X] ainda está disponível.\n\nRegras:\n- Tom cordial e direto, sem parecer texto automático.\n- Confirme disponibilidade e mencione 1 diferencial concreto.\n- Não jogue o preço seco sem contexto.\n- Termine com uma pergunta simples de qualificação sobre prazo de mudança.'
+      },
+      captacao: {
+        title: 'Captação de Proprietários e Exclusividade',
+        summary: 'Abordagens para proprietários anunciando particular, cartas de apresentação profissional, argumentos de precificação realista e roteiros para fechar autorização com exclusividade.',
+        prompt: 'Escreva uma mensagem inicial de WhatsApp para abordar um proprietário particular que anunciou [Casa em Condomínio, 280m²] sem corretor.\n\nObjetivo:\n- Mostrar conhecimento específico do condomínio sem criticar o anúncio atual.\n- Oferecer um estudo comparativo rápido de imóveis vendidos na região nos últimos 90 dias.\n- Pedir 10 minutos para visita técnica sem compromisso.'
+      },
+      reels: {
+        title: 'Roteiros de Vídeos Curtos e Reels (30 a 60s)',
+        summary: 'Estruturas prontas para gravar pelo celular sem travar na câmera, com gancho visual nos 3 primeiros segundos, ordem dos ambientes e chamada direta para mensagem.',
+        prompt: 'Crie um roteiro de 45 segundos para Instagram Reels apresentando [Cobertura Duplex, 190m², Bairro Y].\n\nEstrutura:\n- 0 a 3s: Gancho visual e frase curta abrindo direto no melhor ambiente.\n- 4 a 35s: 3 pontos objetivos de planta, iluminação e localização.\n- 36 a 45s: Chamada clara pedindo para comentar "PLANTA" para receber detalhes e valor no direct.'
+      }
+    };
+
+    let activeMod = 'portais';
+
+    function selectModule(key) {
+      activeMod = key;
+      const mod = modules[key];
+      const titleEl = document.getElementById('sheetTitle');
+      const summaryEl = document.getElementById('sheetSummary');
+      const promptEl = document.getElementById('sheetPrompt');
+
+      titleEl.textContent = mod.title;
+      summaryEl.textContent = mod.summary;
+      promptEl.textContent = mod.prompt;
+      document.getElementById('btnCopySpecimen').textContent = 'Copiar este prompt';
+
+      document.querySelectorAll('.index-btn').forEach(function(btn) {
+        const isCurrent = btn.getAttribute('data-mod') === key;
+        btn.classList.toggle('is-active', isCurrent);
+        btn.setAttribute('aria-selected', isCurrent);
+      });
+
+      if (window.gsap && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        gsap.fromTo([titleEl, summaryEl, promptEl],
+          { opacity: 0, y: 6 },
+          { opacity: 1, y: 0, duration: 0.24, stagger: 0.03, ease: 'power2.out', clearProps: 'transform' }
+        );
+      }
+    }
+
+    function copySpecimen() {
+      const btn = document.getElementById('btnCopySpecimen');
+      navigator.clipboard.writeText(modules[activeMod].prompt).then(function() {
+        btn.textContent = 'Prompt copiado';
+        setTimeout(function() {
+          btn.textContent = 'Copiar este prompt';
+        }, 2000);
+      }).catch(function() {
+        btn.textContent = 'Selecione e copie';
+      });
+    }
+
+    // GSAP 3 + ScrollTrigger Motion System (guarded by prefers-reduced-motion)
+    (function initGSAP() {
+      if (!window.gsap || !window.ScrollTrigger) return;
+      gsap.registerPlugin(ScrollTrigger);
+
+      const mm = gsap.matchMedia();
+
+      mm.add('(prefers-reduced-motion: no-preference)', function() {
+        // 1. Ordered Hero Entrance after fonts settle
+        const startHero = function() {
+          const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+          tl.from('.masthead', { opacity: 0, y: 10, duration: 0.36, clearProps: 'transform' })
+            .from('[data-hero-item]', { opacity: 0, y: 16, duration: 0.46, stagger: 0.1, clearProps: 'transform' }, '-=0.2')
+            .from('.hero-media img', { opacity: 0, scale: 1.04, duration: 0.55, clearProps: 'opacity' }, '-=0.3');
+        };
+
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(startHero);
+        } else {
+          startHero();
+        }
+
+        // 2. Subtle architectural parallax on hero photo
+        gsap.fromTo('.hero-media img',
+          { yPercent: -4 },
+          {
+            yPercent: 4,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: '.hero-media',
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: true
+            }
+          }
+        );
+
+        // 3. Signature Move: Scroll-paced statement reveal
+        const statement = document.getElementById('scrollStatement');
+        if (statement) {
+          const words = statement.textContent.trim().split(/\s+/);
+          statement.innerHTML = words.map(function(w) {
+            return '<span class="statement-word">' + w + '</span>';
+          }).join(' ');
+
+          gsap.to('#scrollStatement .statement-word', {
+            opacity: 1,
+            stagger: 0.06,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: '#scrollStatement',
+              start: 'top 80%',
+              end: 'bottom 45%',
+              scrub: 0.35
+            }
+          });
+        }
+
+        // 4. Once-only in-view reveals for sections below the fold
+        ScrollTrigger.batch('.specimen-nav, .specimen-sheet, .offer-left, .offer-receipt, .faq-grid', {
+          once: true,
+          start: 'top 85%',
+          onEnter: function(batch) {
+            gsap.fromTo(batch,
+              { opacity: 0, y: 16 },
+              { opacity: 1, y: 0, duration: 0.44, stagger: 0.08, ease: 'power3.out', clearProps: 'transform' }
+            );
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
